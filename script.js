@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('registration-form');
-    const feedbackDiv = document.getElementById('form-feedback');
-
     form.addEventListener('submit', (event) => {
-        event.preventDefault();
+        event.preventDefault(); // Prevent default form submission
 
         // Retrieve user inputs and trim whitespace
         const username = document.getElementById('username').value.trim();
@@ -33,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Display feedback
+        const feedbackDiv = document.getElementById('form-feedback');
         feedbackDiv.style.display = 'block';
         if (isValid) {
             feedbackDiv.textContent = 'Registration successful!';
